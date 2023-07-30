@@ -1,0 +1,20 @@
+import {vhFix} from './utils/ios-vh-fix';
+import {initModals} from './modules/modals/init-modals';
+import {initIntroSlider} from './modules/sliders/intro-slider.js';
+import {initScrollTo} from './modules/init-move-to.js';
+import {initMainScrollSlider} from './modules/scroll-slider.js';
+import {scrollDetect} from './utils/scroll-detect.js';
+
+// ---------------------------------
+
+window.addEventListener('DOMContentLoaded', () => {
+  vhFix();
+
+  window.addEventListener('load', () => {
+    initModals();
+    initScrollTo();
+    initIntroSlider();
+    initMainScrollSlider();
+    console.log(scrollDetect());
+  });
+});

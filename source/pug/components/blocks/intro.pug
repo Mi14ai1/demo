@@ -1,0 +1,12 @@
+mixin intro()
+  section.intro
+    .container
+      .intro__content
+        h1 Типовые задачи
+        .intro__slider-wrapper
+          +subtitle-list(["Слайдеры", "Аккордеоны", "Табы", "Анимации", "Модальные окна"]).intro__subtitles
+          .slider-continer
+            +intro-slider()
+            button.btn.intro__slider-button.js-slider-prev prev
+            button.btn.intro__slider-button.js-slider-next next
+

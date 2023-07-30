@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Демо проект UI-kit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Демонстрация навыков">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest" crossorigin="use-credentials">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preload" href="fonts/futura_demi.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/PTSans-Regular.woff2" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="visually-hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="burger" viewBox="0 0 48 48"><g fill="none">
+  <rect width="48" height="4" rx="2" fill="black"/>
+  <rect y="44" width="48" height="4" rx="2" fill="black"/>
+  <rect y="22" width="48" height="4" rx="2" fill="black"/>
+</g></symbol><symbol id="icon-close" viewBox="0 0 20 20"><g fill="none"><path d="M.293 18.291a1 1 0 101.414 1.414L10 11.413l8.292 8.292a1 1 0 101.414-1.414l-8.292-8.292 8.292-8.292A1 1 0 1018.291.293L9.999 8.585 1.707.293A1 1 0 10.293 1.707L8.585 10 .293 18.291z"/></g></symbol><symbol id="logo-demo" viewBox="0 0 80 80"><g fill="none">
+
+  <circle cx="40" cy="40" r="40" fill="currentColor"/>
+  <rect x="9" y="18" width="48" height="17" fill="black"/>
+  <rect x="9" y="18" width="48" height="17" fill="black"/>
+  <path d="M12.9205 31.4545V22.4545H13.892V23.4943H14.0114C14.0852 23.3807 14.1875 23.2358 14.3182 23.0597C14.4517 22.8807 14.642 22.7216 14.8892 22.5824C15.1392 22.4403 15.4773 22.3693 15.9034 22.3693C16.4545 22.3693 16.9403 22.5071 17.3608 22.7827C17.7813 23.0582 18.1094 23.4489 18.3452 23.9545C18.581 24.4602 18.6989 25.0568 18.6989 25.7443C18.6989 26.4375 18.581 27.0384 18.3452 27.5469C18.1094 28.0526 17.7827 28.4446 17.3651 28.723C16.9474 28.9986 16.4659 29.1364 15.9205 29.1364C15.5 29.1364 15.1634 29.0668 14.9105 28.9276C14.6577 28.7855 14.4631 28.625 14.3267 28.446C14.1903 28.2642 14.0852 28.1136 14.0114 27.9943H13.9261V31.4545H12.9205ZM13.9091 25.7273C13.9091 26.2216 13.9815 26.6577 14.1264 27.0355C14.2713 27.4105 14.483 27.7045 14.7614 27.9176C15.0398 28.1278 15.3807 28.233 15.7841 28.233C16.2045 28.233 16.5554 28.1222 16.8366 27.9006C17.1207 27.6761 17.3338 27.375 17.4759 26.9972C17.6207 26.6165 17.6932 26.1932 17.6932 25.7273C17.6932 25.267 17.6222 24.8523 17.4801 24.483C17.3409 24.1108 17.1293 23.8168 16.8452 23.6009C16.5639 23.3821 16.2102 23.2727 15.7841 23.2727C15.375 23.2727 15.0313 23.3764 14.7528 23.5838C14.4744 23.7884 14.2642 24.0753 14.1222 24.4446C13.9801 24.8111 13.9091 25.2386 13.9091 25.7273ZM20.233 29V22.4545H21.2045V23.4432H21.2727C21.392 23.1193 21.608 22.8565 21.9205 22.6548C22.233 22.4531 22.5852 22.3523 22.9773 22.3523C23.0511 22.3523 23.1435 22.3537 23.2543 22.3565C23.3651 22.3594 23.4489 22.3636 23.5057 22.3693V23.392C23.4716 23.3835 23.3935 23.3707 23.2713 23.3537C23.152 23.3338 23.0256 23.3239 22.892 23.3239C22.5739 23.3239 22.2898 23.3906 22.0398 23.5241C21.7926 23.6548 21.5966 23.8366 21.4517 24.0696C21.3097 24.2997 21.2386 24.5625 21.2386 24.858V29H20.233ZM27.1577 29.1364C26.5668 29.1364 26.0483 28.9957 25.6023 28.7145C25.1591 28.4332 24.8125 28.0398 24.5625 27.5341C24.3153 27.0284 24.1918 26.4375 24.1918 25.7614C24.1918 25.0795 24.3153 24.4844 24.5625 23.9759C24.8125 23.4673 25.1591 23.0724 25.6023 22.7912C26.0483 22.5099 26.5668 22.3693 27.1577 22.3693C27.7486 22.3693 28.2656 22.5099 28.7088 22.7912C29.1548 23.0724 29.5014 23.4673 29.7486 23.9759C29.9986 24.4844 30.1236 25.0795 30.1236 25.7614C30.1236 26.4375 29.9986 27.0284 29.7486 27.5341C29.5014 28.0398 29.1548 28.4332 28.7088 28.7145C28.2656 28.9957 27.7486 29.1364 27.1577 29.1364ZM27.1577 28.233C27.6065 28.233 27.9759 28.1179 28.2656 27.8878C28.5554 27.6577 28.7699 27.3551 28.9091 26.9801C29.0483 26.6051 29.1179 26.1989 29.1179 25.7614C29.1179 25.3239 29.0483 24.9162 28.9091 24.5384C28.7699 24.1605 28.5554 23.8551 28.2656 23.6222C27.9759 23.3892 27.6065 23.2727 27.1577 23.2727C26.7088 23.2727 26.3395 23.3892 26.0497 23.6222C25.7599 23.8551 25.5455 24.1605 25.4062 24.5384C25.267 24.9162 25.1974 25.3239 25.1974 25.7614C25.1974 26.1989 25.267 26.6051 25.4062 26.9801C25.5455 27.3551 25.7599 27.6577 26.0497 27.8878C26.3395 28.1179 26.7088 28.233 27.1577 28.233ZM31.6587 22.4545H32.6644V29.4773C32.6644 29.8807 32.5948 30.2301 32.4556 30.5256C32.3192 30.821 32.1119 31.0497 31.8335 31.2116C31.5579 31.3736 31.2099 31.4545 30.7894 31.4545C30.7553 31.4545 30.7212 31.4545 30.6871 31.4545C30.6531 31.4545 30.619 31.4545 30.5849 31.4545V30.517C30.619 30.517 30.6502 30.517 30.6786 30.517C30.707 30.517 30.7383 30.517 30.7724 30.517C31.0792 30.517 31.3036 30.4261 31.4457 30.2443C31.5877 30.0653 31.6587 29.8097 31.6587 29.4773V22.4545ZM32.1531 21.3636C31.957 21.3636 31.788 21.2969 31.646 21.1634C31.5067 21.0298 31.4371 20.8693 31.4371 20.6818C31.4371 20.4943 31.5067 20.3338 31.646 20.2003C31.788 20.0668 31.957 20 32.1531 20C32.3491 20 32.5167 20.0668 32.6559 20.2003C32.7979 20.3338 32.869 20.4943 32.869 20.6818C32.869 20.8693 32.7979 21.0298 32.6559 21.1634C32.5167 21.2969 32.3491 21.3636 32.1531 21.3636ZM37.2507 29.1364C36.62 29.1364 36.076 28.9972 35.6186 28.7188C35.1641 28.4375 34.8132 28.0455 34.5661 27.5426C34.3217 27.0369 34.1996 26.4489 34.1996 25.7784C34.1996 25.108 34.3217 24.517 34.5661 24.0057C34.8132 23.4915 35.157 23.0909 35.5973 22.804C36.0405 22.5142 36.5575 22.3693 37.1484 22.3693C37.4893 22.3693 37.826 22.4261 38.1584 22.5398C38.4908 22.6534 38.7933 22.8381 39.0661 23.0938C39.3388 23.3466 39.5561 23.6818 39.718 24.0994C39.88 24.517 39.9609 25.0312 39.9609 25.642V26.0682H34.9155V25.1989H38.9382C38.9382 24.8295 38.8643 24.5 38.7166 24.2102C38.5717 23.9205 38.3643 23.6918 38.0945 23.5241C37.8274 23.3565 37.5121 23.2727 37.1484 23.2727C36.7479 23.2727 36.4013 23.3722 36.1087 23.571C35.8189 23.767 35.5959 24.0227 35.4396 24.3381C35.2834 24.6534 35.2053 24.9915 35.2053 25.3523V25.9318C35.2053 26.4261 35.2905 26.8452 35.4609 27.1889C35.6342 27.5298 35.8743 27.7898 36.1811 27.9688C36.4879 28.1449 36.8445 28.233 37.2507 28.233C37.5149 28.233 37.7536 28.196 37.9666 28.1222C38.1825 28.0455 38.3686 27.9318 38.5249 27.7812C38.6811 27.6278 38.8018 27.4375 38.8871 27.2102L39.8587 27.483C39.7564 27.8125 39.5845 28.1023 39.343 28.3523C39.1016 28.5994 38.8033 28.7926 38.4482 28.9318C38.093 29.0682 37.6939 29.1364 37.2507 29.1364ZM44.1499 29.1364C43.5362 29.1364 43.0078 28.9915 42.5646 28.7017C42.1214 28.4119 41.7805 28.0128 41.5419 27.5043C41.3033 26.9957 41.1839 26.4148 41.1839 25.7614C41.1839 25.0966 41.3061 24.5099 41.5504 24.0014C41.7976 23.4901 42.1413 23.0909 42.5817 22.804C43.0249 22.5142 43.5419 22.3693 44.1328 22.3693C44.593 22.3693 45.0078 22.4545 45.3771 22.625C45.7464 22.7955 46.049 23.0341 46.2848 23.3409C46.5206 23.6477 46.6669 24.0057 46.7237 24.4148H45.718C45.6413 24.1165 45.4709 23.8523 45.2067 23.6222C44.9453 23.3892 44.593 23.2727 44.1499 23.2727C43.7578 23.2727 43.4141 23.375 43.1186 23.5795C42.826 23.7812 42.5973 24.0668 42.4325 24.4361C42.2706 24.8026 42.1896 25.233 42.1896 25.7273C42.1896 26.233 42.2692 26.6733 42.4283 27.0483C42.5902 27.4233 42.8175 27.7145 43.1101 27.9219C43.4055 28.1293 43.7521 28.233 44.1499 28.233C44.4112 28.233 44.6484 28.1875 44.8615 28.0966C45.0746 28.0057 45.255 27.875 45.4027 27.7045C45.5504 27.5341 45.6555 27.3295 45.718 27.0909H46.7237C46.6669 27.4773 46.5263 27.8253 46.3018 28.1349C46.0803 28.4418 45.7862 28.6861 45.4197 28.8679C45.0561 29.0469 44.6328 29.1364 44.1499 29.1364ZM51.0405 22.4545V23.3068H47.6484V22.4545H51.0405ZM48.6371 20.8864H49.6428V27.125C49.6428 27.4091 49.6839 27.6222 49.7663 27.7642C49.8516 27.9034 49.9595 27.9972 50.0902 28.0455C50.2237 28.0909 50.3643 28.1136 50.5121 28.1136C50.6229 28.1136 50.7138 28.108 50.7848 28.0966C50.8558 28.0824 50.9126 28.071 50.9553 28.0625L51.1598 28.9659C51.0916 28.9915 50.9964 29.017 50.8743 29.0426C50.7521 29.071 50.5973 29.0852 50.4098 29.0852C50.1257 29.0852 49.8473 29.0241 49.5746 28.902C49.3047 28.7798 49.0803 28.5938 48.9013 28.3438C48.7251 28.0938 48.6371 27.7784 48.6371 27.3977V20.8864Z" fill="white"/>
+  <line x1="-2" y1="38" x2="46" y2="38" stroke="black" stroke-width="2"/>
+  <line x1="32" y1="41" x2="80" y2="41" stroke="white" stroke-width="2"/>
+  <rect x="24" y="44" width="48" height="17" fill="black"/>
+  <rect x="24" y="44" width="48" height="17" fill="black"/>
+  <path d="M24.9205 58.4545V49.4545H25.892V50.4943H26.0114C26.0852 50.3807 26.1875 50.2358 26.3182 50.0597C26.4517 49.8807 26.642 49.7216 26.8892 49.5824C27.1392 49.4403 27.4773 49.3693 27.9034 49.3693C28.4545 49.3693 28.9403 49.5071 29.3608 49.7827C29.7813 50.0582 30.1094 50.4489 30.3452 50.9545C30.581 51.4602 30.6989 52.0568 30.6989 52.7443C30.6989 53.4375 30.581 54.0384 30.3452 54.5469C30.1094 55.0526 29.7827 55.4446 29.3651 55.723C28.9474 55.9986 28.4659 56.1364 27.9205 56.1364C27.5 56.1364 27.1634 56.0668 26.9105 55.9276C26.6577 55.7855 26.4631 55.625 26.3267 55.446C26.1903 55.2642 26.0852 55.1136 26.0114 54.9943H25.9261V58.4545H24.9205ZM25.9091 52.7273C25.9091 53.2216 25.9815 53.6577 26.1264 54.0355C26.2713 54.4105 26.483 54.7045 26.7614 54.9176C27.0398 55.1278 27.3807 55.233 27.7841 55.233C28.2045 55.233 28.5554 55.1222 28.8366 54.9006C29.1207 54.6761 29.3338 54.375 29.4759 53.9972C29.6207 53.6165 29.6932 53.1932 29.6932 52.7273C29.6932 52.267 29.6222 51.8523 29.4801 51.483C29.3409 51.1108 29.1293 50.8168 28.8452 50.6009C28.5639 50.3821 28.2102 50.2727 27.7841 50.2727C27.375 50.2727 27.0313 50.3764 26.7528 50.5838C26.4744 50.7884 26.2642 51.0753 26.1222 51.4446C25.9801 51.8111 25.9091 52.2386 25.9091 52.7273ZM34.892 56.1364C34.3011 56.1364 33.7827 55.9957 33.3366 55.7145C32.8935 55.4332 32.5469 55.0398 32.2969 54.5341C32.0497 54.0284 31.9261 53.4375 31.9261 52.7614C31.9261 52.0795 32.0497 51.4844 32.2969 50.9759C32.5469 50.4673 32.8935 50.0724 33.3366 49.7912C33.7827 49.5099 34.3011 49.3693 34.892 49.3693C35.483 49.3693 36 49.5099 36.4432 49.7912C36.8892 50.0724 37.2358 50.4673 37.483 50.9759C37.733 51.4844 37.858 52.0795 37.858 52.7614C37.858 53.4375 37.733 54.0284 37.483 54.5341C37.2358 55.0398 36.8892 55.4332 36.4432 55.7145C36 55.9957 35.483 56.1364 34.892 56.1364ZM34.892 55.233C35.3409 55.233 35.7102 55.1179 36 54.8878C36.2898 54.6577 36.5043 54.3551 36.6435 53.9801C36.7827 53.6051 36.8523 53.1989 36.8523 52.7614C36.8523 52.3239 36.7827 51.9162 36.6435 51.5384C36.5043 51.1605 36.2898 50.8551 36 50.6222C35.7102 50.3892 35.3409 50.2727 34.892 50.2727C34.4432 50.2727 34.0739 50.3892 33.7841 50.6222C33.4943 50.8551 33.2798 51.1605 33.1406 51.5384C33.0014 51.9162 32.9318 52.3239 32.9318 52.7614C32.9318 53.1989 33.0014 53.6051 33.1406 53.9801C33.2798 54.3551 33.4943 54.6577 33.7841 54.8878C34.0739 55.1179 34.4432 55.233 34.892 55.233ZM39.3931 56V49.4545H40.3647V50.4432H40.4329C40.5522 50.1193 40.7681 49.8565 41.0806 49.6548C41.3931 49.4531 41.7454 49.3523 42.1374 49.3523C42.2113 49.3523 42.3036 49.3537 42.4144 49.3565C42.5252 49.3594 42.609 49.3636 42.6658 49.3693V50.392C42.6317 50.3835 42.5536 50.3707 42.4315 50.3537C42.3121 50.3338 42.1857 50.3239 42.0522 50.3239C41.734 50.3239 41.4499 50.3906 41.1999 50.5241C40.9528 50.6548 40.7567 50.8366 40.6119 51.0696C40.4698 51.2997 40.3988 51.5625 40.3988 51.858V56H39.3931ZM47.1147 49.4545V50.3068H43.7227V49.4545H47.1147ZM44.7113 47.8864H45.717V54.125C45.717 54.4091 45.7582 54.6222 45.8406 54.7642C45.9258 54.9034 46.0337 54.9972 46.1644 55.0455C46.2979 55.0909 46.4386 55.1136 46.5863 55.1136C46.6971 55.1136 46.788 55.108 46.859 55.0966C46.93 55.0824 46.9869 55.071 47.0295 55.0625L47.234 55.9659C47.1658 55.9915 47.0707 56.017 46.9485 56.0426C46.8263 56.071 46.6715 56.0852 46.484 56.0852C46.1999 56.0852 45.9215 56.0241 45.6488 55.902C45.3789 55.7798 45.1545 55.5938 44.9755 55.3438C44.7994 55.0938 44.7113 54.7784 44.7113 54.3977V47.8864ZM51.5423 49.4545V50.3068H48.0138V49.4545H51.5423ZM49.0707 56V48.5511C49.0707 48.1761 49.1587 47.8636 49.3349 47.6136C49.511 47.3636 49.7397 47.1761 50.021 47.0511C50.3022 46.9261 50.5991 46.8636 50.9116 46.8636C51.1587 46.8636 51.3604 46.8835 51.5167 46.9233C51.6729 46.9631 51.7894 47 51.8661 47.0341L51.5763 47.9034C51.5252 47.8864 51.4542 47.8651 51.3633 47.8395C51.2752 47.8139 51.1587 47.8011 51.0138 47.8011C50.6815 47.8011 50.4414 47.8849 50.2937 48.0526C50.1488 48.2202 50.0763 48.4659 50.0763 48.7898V56H49.0707ZM55.3413 56.1364C54.7504 56.1364 54.2319 55.9957 53.7859 55.7145C53.3427 55.4332 52.9961 55.0398 52.7461 54.5341C52.4989 54.0284 52.3754 53.4375 52.3754 52.7614C52.3754 52.0795 52.4989 51.4844 52.7461 50.9759C52.9961 50.4673 53.3427 50.0724 53.7859 49.7912C54.2319 49.5099 54.7504 49.3693 55.3413 49.3693C55.9322 49.3693 56.4492 49.5099 56.8924 49.7912C57.3384 50.0724 57.685 50.4673 57.9322 50.9759C58.1822 51.4844 58.3072 52.0795 58.3072 52.7614C58.3072 53.4375 58.1822 54.0284 57.9322 54.5341C57.685 55.0398 57.3384 55.4332 56.8924 55.7145C56.4492 55.9957 55.9322 56.1364 55.3413 56.1364ZM55.3413 55.233C55.7901 55.233 56.1594 55.1179 56.4492 54.8878C56.739 54.6577 56.9535 54.3551 57.0927 53.9801C57.2319 53.6051 57.3015 53.1989 57.3015 52.7614C57.3015 52.3239 57.2319 51.9162 57.0927 51.5384C56.9535 51.1605 56.739 50.8551 56.4492 50.6222C56.1594 50.3892 55.7901 50.2727 55.3413 50.2727C54.8924 50.2727 54.5231 50.3892 54.2333 50.6222C53.9435 50.8551 53.729 51.1605 53.5898 51.5384C53.4506 51.9162 53.381 52.3239 53.381 52.7614C53.381 53.1989 53.4506 53.6051 53.5898 53.9801C53.729 54.3551 53.9435 54.6577 54.2333 54.8878C54.5231 55.1179 54.8924 55.233 55.3413 55.233ZM60.848 47.2727V56H59.8423V47.2727H60.848ZM62.69 56V49.4545H63.6957V56H62.69ZM63.2013 48.3636C63.0053 48.3636 62.8363 48.2969 62.6942 48.1634C62.555 48.0298 62.4854 47.8693 62.4854 47.6818C62.4854 47.4943 62.555 47.3338 62.6942 47.2003C62.8363 47.0668 63.0053 47 63.2013 47C63.3974 47 63.565 47.0668 63.7042 47.2003C63.8462 47.3338 63.9173 47.4943 63.9173 47.6818C63.9173 47.8693 63.8462 48.0298 63.7042 48.1634C63.565 48.2969 63.3974 48.3636 63.2013 48.3636ZM68.1967 56.1364C67.6058 56.1364 67.0874 55.9957 66.6413 55.7145C66.1982 55.4332 65.8516 55.0398 65.6016 54.5341C65.3544 54.0284 65.2308 53.4375 65.2308 52.7614C65.2308 52.0795 65.3544 51.4844 65.6016 50.9759C65.8516 50.4673 66.1982 50.0724 66.6413 49.7912C67.0874 49.5099 67.6058 49.3693 68.1967 49.3693C68.7876 49.3693 69.3047 49.5099 69.7479 49.7912C70.1939 50.0724 70.5405 50.4673 70.7876 50.9759C71.0376 51.4844 71.1626 52.0795 71.1626 52.7614C71.1626 53.4375 71.0376 54.0284 70.7876 54.5341C70.5405 55.0398 70.1939 55.4332 69.7479 55.7145C69.3047 55.9957 68.7876 56.1364 68.1967 56.1364ZM68.1967 55.233C68.6456 55.233 69.0149 55.1179 69.3047 54.8878C69.5945 54.6577 69.8089 54.3551 69.9482 53.9801C70.0874 53.6051 70.157 53.1989 70.157 52.7614C70.157 52.3239 70.0874 51.9162 69.9482 51.5384C69.8089 51.1605 69.5945 50.8551 69.3047 50.6222C69.0149 50.3892 68.6456 50.2727 68.1967 50.2727C67.7479 50.2727 67.3786 50.3892 67.0888 50.6222C66.799 50.8551 66.5845 51.1605 66.4453 51.5384C66.3061 51.9162 66.2365 52.3239 66.2365 52.7614C66.2365 53.1989 66.3061 53.6051 66.4453 53.9801C66.5845 54.3551 66.799 54.6577 67.0888 54.8878C67.3786 55.1179 67.7479 55.233 68.1967 55.233Z" fill="white"/>
+
+</g></symbol></svg>
+    </div>
+    <div class="wrapper">
+      <style>
+        main {
+          margin-top: 100px;
+        }
+        
+        main > .container {
+          padding-top: 30px;
+          padding-bottom: 30px;
+        }
+        
+        .components-backwards {
+          color: #ffffff;
+          display: inline-block;
+        }
+        
+        .components-backwards span:first-child {
+          position: relative;
+          top: -3px;
+        
+          display: inline-block;
+          margin-right: 15px;
+        
+          font-size: 16px;
+          line-height: 24px;
+          vertical-align: top;
+        
+          transform: scale(2);
+        }
+        
+        .components-backwards span:last-child {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        
+        .components-backwards + h1 {
+          margin-bottom: 0;
+        }
+        
+        .container > section {
+          padding: 70px 0 0 0;
+        }
+        
+        section > h2 {
+          margin: 0 0 20px 0;
+          padding: 20px 0;
+          position: relative;
+          color: #ffffff;
+        }
+        
+        section > h2::before {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 100vw;
+          left: 50%;
+          top: 0;
+          transform: translateX(-50%);
+          background-color: #2c39f2;
+          z-index: -1;
+        }
+        
+        .header-ui {
+          background-color: #2c39f2;
+          padding: 20px 0;
+          position: fixed;
+          width: 100vw;
+          z-index: 99;
+          box-shadow: 0 0 3px 1px #000000;
+        }
+        
+        .header-ui__nav {
+          display: grid;
+          grid-template-columns: max-content 1fr;
+          gap: 20px 80px;
+        }
+        
+        .header-ui__inner-list {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px 30px;
+        }
+        
+        .header-ui__inner-link {
+          color: #ffffff;
+          transition: color 0.3s ease;
+        }
+        
+        .header-ui__inner-link:hover,
+        .header-ui__inner-link.is-active {
+          color: #ff1553;
+        }
+        
+        .header-ui__inner-link.is-inactive {
+          color: #ffffff;
+          pointer-events: none;
+        }
+        
+        .btn {
+          margin: 10px 0;
+        }
+        
+        .wrapper {
+          overflow: hidden;
+        }
+        
+      </style>
+      <header class="header-ui">
+        <nav class="header-ui__nav container"><a class="components-backwards" href="sitemap.html"><span>&larr;</span><span>вернуться на разводящую</span></a>
+          <ul class="header-ui__inner-list">
+            <li class="header-ui__inner-item"><a class="header-ui__inner-link" href="#modals" data-navigation-link>Modals</a></li>
+            <li class="header-ui__inner-item"><a class="header-ui__inner-link" href="#buttons" data-navigation-link>Buttons</a></li>
+            <li class="header-ui__inner-item"><a class="header-ui__inner-link" href="#form-elements" data-navigation-link>Form elements</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <div class="container">
+          <h1>UI-kit</h1>
+          <section id="modals">
+            <h2>Modals</h2>
+            <p>
+              <button class="btn" type="button" data-open-modal="feedback">modal-feedback</button>
+            </p>
+            <p>
+              <button class="btn" type="button" data-open-modal="success">modal-success</button>
+            </p>
+          </section>
+          <section id="buttons">
+            <h2>Buttons</h2>
+            <a class="btn" href="#">Текст</a>
+            <p>Пример вызова</p><code>
+              <pre>+btn({text: "Текст", href: "#"})</pre></code>
+            <a class="btn btn--red" href="#" target="_blank" rel="nofollow noopener noreferrer" aria-label="Просто ссылка">Текст</a>
+            <p>Пример вызова</p><code>
+              <pre>+btn({text: "Я красная ссылка", href: "#", isExternal: true})(aria-label="Просто ссылка").btn--red</pre></code>
+            <button class="btn" type="button" disabled>Текст</button>
+            <p>Пример вызова</p><code>
+              <pre>+btn({text: "Текст"})(disabled)</pre></code>
+          </section>
+          <section id="form-elements">
+            <h2>Form elements</h2>
+            <div data-form-validate data-callback="base">
+              <form method="post">
+                <h2 class="subtitle">Инпуты</h2>
+                <p>Input <b>data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required</b>.</p>
+                <div class="custom-input" data-validate-type="text" data-limitation="name" data-message-base="Поле обязательно к заполнению" data-message-extra="Проверьте корректность заполнения поля" data-required>
+                  <label><span class="custom-input__label">Введите ваше имя</span>
+                    <input type="text" name="user-name-1">
+                  </label>
+                </div>
+                <hr>
+                <p>Input <b>data-validate-type="matrix", data-matrix-limitation="digit", data-matrix="____ ______", data-message-base="Поле обязательно к заполнению", data-required</b>.</p>
+                <div class="custom-input" data-validate-type="matrix" data-matrix-limitation="digit" data-matrix="____ ______" data-message-base="Поле обязательно к заполнению" data-required>
+                  <label><span class="custom-input__label">Введите номер паспорта</span>
+                    <input type="text" name="user-passport">
+                  </label>
+                </div>
+                <hr>
+                <p>Input <b>data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required</b>.</p>
+                <div class="custom-input" data-validate-type="email" data-message-base="Поле обязательно к заполнению" data-required>
+                  <label><span class="custom-input__label">Введите ваш email</span>
+                    <input type="email" name="user-phone">
+                  </label>
+                </div>
+                <hr>
+                <p>Input <b>data-validate-type="phone", data-on-input-validate, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-message-success="Поле заполнено верно", data-required</b>.</p>
+                <div class="custom-input" data-validate-type="phone" data-on-input-validate data-message-base="Поле обязательно к заполнению" data-message-extra="Проверьте корректность заполнения поля" data-message-success="Поле заполнено верно" data-required>
+                  <label><span class="custom-input__label">Введите ваш телефон</span>
+                    <input type="tel" name="user-phone">
+                  </label>
+                </div>
+                <p>Input <b>data-validate-type="custom-example", data-message-base="Поле обязательно к заполнению", data-message-success="Поле заполнено верно", data-required</b>.</p>
+                <div class="custom-input" data-validate-type="custom-example" data-on-input-validate data-required>
+                  <label><span class="custom-input__label">Введите 10 символов</span>
+                    <input type="text" name="user-field" minlength="10">
+                  </label>
+                </div>
+                <hr>
+                <p>Input <b>data-validate-type="custom-upload", data-required</b>.</p>
+                <div class="input-upload input-upload--file" data-upload="file" data-validate-type="custom-upload" data-required>
+                  <label>
+                    <input type="file" name="upload-file"><span class="btn">Загрузить файл</span>
+                  </label>
+                </div>
+                <hr>
+                <div class="input-upload input-upload--images-drop" data-upload="img-drop" data-validate-type="custom-upload" data-required>
+                  <div class="input-upload__drop-zone" data-drop-zone><span class="input-upload__drop-zone-text">Перетащите сюда файлы</span></div>
+                  <label data-drop-zone>
+                    <input type="file" name="upload-file"><span class="btn">Загрузить файл</span>
+                  </label>
+                </div>
+                <hr>
+                <p>Textarea <b>data-validate-type="text"</b>.</p>
+                <div class="custom-textarea" data-validate-type="text">
+                  <label><span class="custom-textarea__label">Расскажите о себе</span>
+                    <textarea name="user-info"></textarea>
+                  </label>
+                </div>
+                <hr>
+                <h2 class="subtitle">Чекбоксы</h2>
+                <p>Чекбокс <b>data-validate-type="checkbox", data-message-base="Поле обязательно к заполнению"</b>.</p>
+                <div>
+                  <div class="custom-toggle custom-toggle--checkbox" data-validate-type="checkbox" data-message-base="Поле обязательно к заполнению">
+                    <label>
+                      <input type="checkbox" value="user-agreement-1" name="user-agreement"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Чекбокс</span>
+                    </label>
+                  </div>
+                </div>
+                <hr>
+                <p>Селект простой с выбранной опцией.</p>
+                <div class="custom-select" data-select data-validate-type="select" data-name="some-name" data-id="id-example-1" data-message-base="Поле обязательно к заполнению">
+                  <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon"></span></button>
+                  <ul class="custom-select__list" role="listbox">
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="true" role="option">Тема 1</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">Тема 2</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">Тема 3</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">Тема 4</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">Тема 5</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">Тема 6</li>
+                  </ul>
+                </div>
+                <p>Селект простой без выбранной опции.</p>
+                <div class="custom-select" data-select data-validate-type="select" data-name="some-name" data-id="id-example-2" data-message-base="Поле обязательно к заполнению">
+                  <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon"></span></button>
+                  <ul class="custom-select__list" role="listbox">
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="false" role="option">Тема 1</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">Тема 2</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">Тема 3</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">Тема 4</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">Тема 5</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">Тема 6</li>
+                  </ul>
+                </div>
+                <hr>
+                <button class="btn" type="reset">Сбросить форму</button>
+                <button class="btn" type="submit">Отправить форму</button>
+              </form>
+            </div>
+          </section>
+        </div>
+      </main>
+      <script>const MoveTo = (() => {
+  /**
+  * Defaults
+  * @type {object}
+  */
+  const defaults = {
+    tolerance: 0,
+    duration: 800,
+    easing: 'easeOutQuart',
+    container: window,
+    callback() {},
+  };
+
+  /**
+  * easeOutQuart Easing Function
+  * @param  {number} t - current time
+  * @param  {number} b - start value
+  * @param  {number} c - change in value
+  * @param  {number} d - duration
+  * @return {number} - calculated value
+  */
+  function easeOutQuart(t, b, c, d) {
+    t /= d;
+    t--;
+    return -c * (t * t * t * t - 1) + b;
+  }
+
+  /**
+  * Merge two object
+  *
+  * @param  {object} obj1
+  * @param  {object} obj2
+  * @return {object} merged object
+  */
+  function mergeObject(obj1, obj2) {
+    const obj3 = {};
+    Object.keys(obj1).forEach((propertyName) => {
+      obj3[propertyName] = obj1[propertyName];
+    });
+
+    Object.keys(obj2).forEach((propertyName) => {
+      obj3[propertyName] = obj2[propertyName];
+    });
+    return obj3;
+  }
+
+  /**
+  * Converts camel case to kebab case
+  * @param  {string} val the value to be converted
+  * @return {string} the converted value
+  */
+  function kebabCase(val) {
+    return val.replace(/([A-Z])/g, function ($1) {
+      return '-' + $1.toLowerCase();
+    });
+  }
+
+  /**
+  * Count a number of item scrolled top
+  * @param  {Window|HTMLElement} container
+  * @return {number}
+  */
+  function countScrollTop(container) {
+    if (container instanceof HTMLElement) {
+      return container.scrollTop;
+    }
+    return container.pageYOffset;
+  }
+
+  /**
+  * MoveTo Constructor
+  * @param {object} options Options
+  * @param {object} easeFunctions Custom ease functions
+  */
+  // eslint-disable-next-line no-shadow
+  function MoveTo(options = {}, easeFunctions = {}) {
+    this.options = mergeObject(defaults, options);
+    this.easeFunctions = mergeObject({easeOutQuart}, easeFunctions);
+  }
+
+  /**
+  * Register a dom element as trigger
+  * @param  {HTMLElement} dom Dom trigger element
+  * @param  {function} callback Callback function
+  * @return {function|void} unregister function
+  */
+  MoveTo.prototype.registerTrigger = function (dom, callback) {
+    if (!dom) {
+      return;
+    }
+
+    const href = dom.getAttribute('href') || dom.getAttribute('data-target');
+    // The element to be scrolled
+    const target = (href && href !== '#')
+      ? document.getElementById(href.substring(1))
+      : document.body;
+    const options = mergeObject(this.options, _getOptionsFromTriggerDom(dom, this.options));
+
+    if (typeof callback === 'function') {
+      options.callback = callback;
+    }
+
+    const listener = (e) => {
+      e.preventDefault();
+      this.move(target, options);
+    };
+
+    dom.addEventListener('click', listener, false);
+
+    // eslint-disable-next-line consistent-return
+    return () => dom.removeEventListener('click', listener, false);
+  };
+
+  /**
+  * Move
+  * Scrolls to given element by using easeOutQuart function
+  * @param  {HTMLElement|number} target Target element to be scrolled or target position
+  * @param  {object} options Custom options
+  */
+  MoveTo.prototype.move = function (target, options = {}) {
+    if (target !== 0 && !target) {
+      return;
+    }
+
+    options = mergeObject(this.options, options);
+
+    let distance = typeof target === 'number' ? target : target.getBoundingClientRect().top;
+    const from = countScrollTop(options.container);
+    let startTime = null;
+    let lastYOffset;
+    distance -= options.tolerance;
+
+    // rAF loop
+    /* eslint-disable-next-line */
+    const loop = (currentTime) => {
+      const currentYOffset = countScrollTop(this.options.container);
+
+      if (!startTime) {
+        // To starts time from 1, we subtracted 1 from current time
+        // If time starts from 1 The first loop will not do anything,
+        // because easing value will be zero
+        startTime = currentTime - 1;
+      }
+
+      const timeElapsed = currentTime - startTime;
+
+      if (lastYOffset) {
+        if (
+          (distance > 0 && lastYOffset > currentYOffset) ||
+          (distance < 0 && lastYOffset < currentYOffset)
+        ) {
+          return options.callback(target);
+        }
+      }
+      lastYOffset = currentYOffset;
+
+      const val = this.easeFunctions[options.easing](timeElapsed, from, distance, options.duration);
+
+      options.container.scroll(0, val);
+
+      if (timeElapsed < options.duration) {
+        window.requestAnimationFrame(loop);
+      } else {
+        options.container.scroll(0, distance + from);
+        options.callback(target);
+      }
+    };
+
+    window.requestAnimationFrame(loop);
+  };
+
+  /**
+  * Adds custom ease function
+  * @param {string}   name Ease function name
+  * @param {function} fn   Ease function
+  */
+  MoveTo.prototype.addEaseFunction = function (name, fn) {
+    this.easeFunctions[name] = fn;
+  };
+
+  /**
+  * Returns options which created from trigger dom element
+  * @param  {HTMLElement} dom Trigger dom element
+  * @param  {object} options The instance's options
+  * @return {object} The options which created from trigger dom element
+  */
+  function _getOptionsFromTriggerDom(dom, options) {
+    const domOptions = {};
+
+    Object.keys(options).forEach((key) => {
+      const value = dom.getAttribute(`data-mt-${kebabCase(key)}`);
+      if (value) {
+        domOptions[key] = isNaN(value) ? value : parseInt(value, 10);
+      }
+    });
+    return domOptions;
+  }
+
+  return MoveTo;
+})();
+window.MoveTo = MoveTo;
+
+class NavigationChanger {
+  constructor() {
+    this._scrollDuration = 1000;
+    this._currentIndex = 0;
+    this._newCurrentIndex = null;
+    this._blockShift = 50;
+    this._linkElements = document.querySelectorAll('[data-navigation-link]');
+
+    this._moveTo = new window.MoveTo({
+      duration: this._scrollDuration,
+      easing: 'easeOutQuart',
+    });
+
+    this._documentScrollHandler = this._documentScrollHandler.bind(this);
+  }
+
+  init() {
+    if (!this._linkElements.length) {
+      return;
+    }
+    this._initMoveTo();
+    this._changeLinksActiveState();
+    document.addEventListener('scroll', this._documentScrollHandler);
+  }
+
+  _documentScrollHandler() {
+    this._changeLinksActiveState();
+  }
+
+  _changeLinksActiveState() {
+    this._linkElements.forEach((link, index) => {
+      const currentBlockElement = document.querySelector(`${link.getAttribute('href')}`);
+      if (!currentBlockElement) {
+        // eslint-disable-next-line no-console
+        console.error('Блока на который ссылается ссылка не существует! Проверьте соответствие href ссылок с id блоков');
+        return;
+      }
+      if (currentBlockElement.getBoundingClientRect().bottom > this._blockShift && currentBlockElement.getBoundingClientRect().top <= this._blockShift) {
+        link.classList.add('is-active');
+      } else {
+        link.classList.remove('is-active');
+      }
+
+      if (document.body.getBoundingClientRect().bottom - window.innerHeight < this._blockShift && currentBlockElement.getBoundingClientRect().top > this._blockShift) {
+        this._linkElements[index - 1].classList.remove('is-active');
+        link.classList.add('is-active');
+      }
+    });
+  }
+
+  _removeLinkAnimation() {
+    this._linkElements.forEach((link, index) => {
+      if (index !== this._currentIndex && index !== this._newCurrentIndex) {
+        link.classList.add('is-inactive');
+      }
+    });
+  }
+
+  _addLinkAnimation() {
+    this._linkElements.forEach((link) => link.classList.remove('is-inactive'));
+    this._currentIndex = this._newCurrentIndex;
+  }
+
+  _initMoveTo() {
+    this._linkElements.forEach((link, index) => {
+      link.addEventListener('click', (evt) => {
+        evt.preventDefault();
+        const target = document.querySelector(`${link.getAttribute('href')}`);
+        if (!target) {
+          // eslint-disable-next-line no-console
+          console.error('Блока на который ссылается ссылка не существует! Проверьте соответствие href ссылок с id блоков');
+          return;
+        }
+        this._newCurrentIndex = index;
+        this._moveTo.move(target);
+        this._removeLinkAnimation();
+        setTimeout(() => {
+          this._addLinkAnimation();
+        }, this._scrollDuration);
+      });
+    });
+  }
+}
+
+const navigationChanger = new NavigationChanger();
+
+navigationChanger.init();
+
+      </script>
+    </div>
+    <div class="modal modal--preload modal--feedback" data-modal="feedback">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+          <p class="modal__description">Обычная модалка</p>
+          <button class="modal__close-btn" type="button" aria-label="Закрыть попап" data-close-modal>
+            <svg width="15" height="15" aria-hidden="true">
+              <use xlink:href="#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal--preload modal--success modal--no-scale modal--fit-content" data-modal="success">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+          <p class="modal__description">Размер этой модалки зависит от ширины контента,<br>отключена анимация-скейл</p>
+          <button class="modal__close-btn" type="button" aria-label="Закрыть попап" data-close-modal>
+            <svg width="15" height="15" aria-hidden="true">
+              <use xlink:href="#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

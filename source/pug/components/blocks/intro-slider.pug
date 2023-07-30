@@ -1,0 +1,71 @@
+-
+  const slides = [
+    {
+      title: "табы",
+      text: "область навигации с&nbsp;кнопками, которые переключают видимость контента в&nbsp;отображаемом фрейме",
+      img: "tabs"
+    },
+    {
+      title: "Аккордеоны",
+      text: "интерактивный элемент веб-страницы, представляющий собой вертикальный список заголовков или&nbsp;вкладок, при клике на&nbsp;которые происходит раскрытие соответствующего содержимого",
+      img: "accordion"
+    },
+    {
+      title: "слайдеры",
+      text: "интерактивный элемент веб-страницы, который позволяет показывать серию изображений, контента или&nbsp;слайдов в&nbsp;определенной последовательности",
+      img: "slider"
+    },
+    {
+      title: "модальные окна",
+      text: "всплывающий элемент интерфейса веб-страницы, который захватывает фокус пользователя и&nbsp;блокирует взаимодействие с&nbsp;остальной частью страницы до&nbsp;закрытия окна",
+      img: "modal"
+    },
+    {
+      title: "анимации",
+      text: "процесс создания и&nbsp;воспроизведения движущихся или&nbsp;изменяющихся элементов интерфейса",
+      img: "animation"
+    },
+
+  ]
+
+  const tabsData = [
+    {
+      title: "tab 1",
+      text: "content",
+    },
+    {
+      title: "tab 2",
+      text: "content",
+    },
+    {
+      title: "tab 3",
+      text: "content",
+    },
+    {
+      title: "tab 4",
+      text: "content",
+    },
+    {
+      title: "tab 5",
+      text: "content",
+    },
+
+  ]
+
+mixin intro-slider()
+  .intro-slider.swiper
+    .swiper-wrapper
+      each slide in slides
+        .swiper-slide
+          +intro-slide(slide)
+      .swiper-slide
+        +intro-slide()
+          .tabs
+            .tabs__buttons
+              each btn in tabsData
+                button.btn.tabs__btn!= btn.title
+            .tabs__content
+              each tab in tabsData
+                .tab
+                  p!= `${tab.title} ${tab.text}`
+

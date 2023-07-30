@@ -1,0 +1,84 @@
+// @font-face {
+//   font-style: normal;
+//   font-weight: 400;
+//   font-family: "Rouble";
+
+//   font-display: swap;
+//   src:
+//     url("../fonts/rouble.woff2") format("woff2");
+// }
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "";
+
+  font-display: swap;
+  src: url("../fonts/.woff2") format("woff2");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "PT Sans";
+
+  font-display: swap;
+  src:
+    url("../fonts/PTSans-Regular.woff2") format("woff2"),
+    url("../fonts/PTSans-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 600;
+  font-family: "PT Sans";
+
+  font-display: swap;
+  src:
+    url("../fonts/PTSans-Bold.woff2") format("woff2"),
+    url("../fonts/PTSans-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 300;
+  font-family: "Futura Demi";
+
+  font-display: swap;
+  src:
+    url("../fonts/futura_demi_light.woff2") format("woff2"),
+    url("../fonts/futura_demi_light.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Futura Demi";
+
+  font-display: swap;
+  src:
+    url("../fonts/futura_demi.woff2") format("woff2"),
+    url("../fonts/futura_demi.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 500;
+  font-family: "Futura PT";
+
+  font-display: swap;
+  src:
+    url("../fonts/FuturaPT-Medium.woff2") format("woff2"),
+    url("../fonts/FuturaPT-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Futura PT Book";
+
+  font-display: swap;
+  src:
+    url("../fonts/futura-pt-book.woff2") format("woff2"),
+    url("../fonts/futura-pt-book.woff") format("woff");
+}

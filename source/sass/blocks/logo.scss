@@ -1,0 +1,12 @@
+.logo {
+  color: $color-default-white;
+  svg {
+    color: $color-logo-header
+  }
+
+  &--footer {
+    svg {
+      color: $color-logo-footer;
+    }
+  }
+}

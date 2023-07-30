@@ -1,0 +1,11 @@
+mixin intro-title(params)
+  - const {title, double} = params
+
+  .intro-title&attributes(atributes)
+    if double
+      .intro-title__left
+        h1!= title
+      .intro-title__right
+        p(aria-hidden="true")!= title
+    else
+      h1!= title

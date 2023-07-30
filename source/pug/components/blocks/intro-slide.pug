@@ -1,0 +1,11 @@
+mixin intro-slide(data)
+  - const {title, text, img} = data ? data : {title: "", text: "", img: ""}
+  .intro-slide
+    if !block
+      .intro-slide__text-container
+        p.intro-slide__title!= title
+        p.intro-slide__text!= text
+      .intro-slide__img-wrapper
+        +img("content/slides/intro", img, "jpg", "480", "320")
+    else
+      block

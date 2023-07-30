@@ -1,0 +1,25 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "modalDemo"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "page-2.html"
+
+block main
+  main
+    section.intro.intro--modal
+      .container
+        .intro__content
+          +intro-title({title: "Простое модальное окно", double: true})
+              p(aria-hidden="true") Простое модальное окно
+          p Описание модального окна Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolor inventore nulla numquam odio porro possimus suscipit tempora? Ad amet consequatur deserunt ducimus maxime molestiae molestias, omnis quasi ullam voluptatibus.
+          button.btn(type="button" data-open-modal="feedback") открыть модальное окно
+
+
+block modals
+  +modal("modal--feedback")(data-modal="feedback")
+    +modal-feedback()

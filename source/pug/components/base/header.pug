@@ -1,0 +1,30 @@
+mixin header(headerMods, currentUrl)
+  -
+    const headerLinks = [
+      {
+        href: "index.html",
+        text: "Главная",
+      },
+      {
+        href: "page-2.html",
+        text: "Демонстрация модальное окно"
+      }
+    ]
+
+  header.header(class=headerMods)
+    .container
+      +logo("logo-demo")
+      nav.main-nav
+        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
+          +icon("burger", 20, 20)
+        .main-nav__wrapper
+          ul.main-nav__list
+            each link in headerLinks
+              - const activeState = currentUrl === link.href
+              li.main-nav__item
+                if(activeState)
+                  span.main-nav__link.is-active=link.text
+                else
+                  a.main-nav__link(href=link.href)=link.text
+            li.main-nav__item
+              span.main-nav__link(data-move-to='footer') футер

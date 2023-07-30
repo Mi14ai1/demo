@@ -1,0 +1,26 @@
+-
+  const srollSliderData = [
+    {
+      title: "First",
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto beatae commodi, distinctio eligendi esse excepturi neque obcaecati optio quae quaerat ut vero! Eligendi fugit neque non praesentium temporibus ut.",
+    },
+    {
+      title: "Second",
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto beatae commodi, distinctio eligendi esse excepturi neque obcaecati optio quae quaerat ut vero! Eligendi fugit neque non praesentium temporibus ut.",
+    },
+    {
+      title: "Third",
+      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto beatae commodi, distinctio eligendi esse excepturi neque obcaecati optio quae quaerat ut vero! Eligendi fugit neque non praesentium temporibus ut.",
+    },
+
+  ]
+
+mixin scroll-slider
+  .scroll-slider(data-scroll-slider="parent")
+    section.scroll-slider__sticky#scroll-slider(data-scroll-slider="sticky")
+      each  slideData in srollSliderData
+        .scroll-slider__slide(data-scroll-slider="slide" class= i === 0 ? 'is-active' : '')
+          .container
+            .content-block.content-block--centered
+              h2!= slideData.title
+              p!= slideData.content
