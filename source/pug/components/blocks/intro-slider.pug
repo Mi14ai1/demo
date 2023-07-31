@@ -30,23 +30,23 @@
 
   const tabsData = [
     {
-      title: "tab 1",
+      title: "Tab 1",
       text: "content",
     },
     {
-      title: "tab 2",
+      title: "Tab 2",
       text: "content",
     },
     {
-      title: "tab 3",
+      title: "Tab 3",
       text: "content",
     },
     {
-      title: "tab 4",
+      title: "Tab 4",
       text: "content",
     },
     {
-      title: "tab 5",
+      title: "Tab 5",
       text: "content",
     },
 
@@ -55,17 +55,16 @@
 mixin intro-slider()
   .intro-slider.swiper
     .swiper-wrapper
-      each slide in slides
-        .swiper-slide
-          +intro-slide(slide)
       .swiper-slide
         +intro-slide()
           .tabs
-            .tabs__buttons
-              each btn in tabsData
-                button.btn.tabs__btn!= btn.title
+            .tabs__buttons.js-tabs-buttons
+              each btn, index in tabsData
+                button.btn.tabs__btn(data-tab-name=`tab-${index}` class= index === 0 ? 'is-active' : '')!= btn.title
             .tabs__content
-              each tab in tabsData
-                .tab
+              each tab, index in tabsData
+                .tab(data-tab-name=`tab-${index}` class= index === 0 ? '' : 'visually-hidden')
                   p!= `${tab.title} ${tab.text}`
-
+      each slide in slides
+        .swiper-slide
+          +intro-slide(slide)

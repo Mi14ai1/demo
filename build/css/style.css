@@ -2551,16 +2551,6 @@ button,
   min-width: 0;
 }
 
-.intro-slide__img-wrapper {
-  position: relative;
-  overflow: hidden;
-}
-.intro-slide__img-wrapper::before {
-  content: "";
-  display: block;
-  padding-bottom: 55.5555555556%;
-}
-
 .intro--modal .btn {
   margin-top: 20px;
 }
@@ -2580,6 +2570,15 @@ button,
   height: 100%;
 }
 
+.intro-slide {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr;
+  grid-template-rows: 1fr;
+  background-color: coral;
+}
 .intro-slide img {
   position: absolute;
   top: 0;
@@ -2588,6 +2587,59 @@ button,
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.intro-slide__text-container,
+.intro-slide__img-wrapper {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+}
+
+.intro-slide__text-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  padding: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.intro-slide__img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.intro-slide__img-wrapper::before {
+  content: "";
+  display: block;
+  padding-bottom: 55.5555555556%;
+}
+
+.intro-slide__title {
+  text-transform: uppercase;
+}
+
+.intro-slide__title,
+.intro-slide__text {
+  font-weight: 600;
+  padding: 20px;
+  border-radius: 20px;
+  overflow: auto;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  -webkit-box-shadow: 0 0 16px -8px #000000;
+          box-shadow: 0 0 16px -8px #000000;
 }
 
 [data-scroll-slider=parent] {
@@ -2687,6 +2739,22 @@ button,
 }
 .scroll-slider__slide--pink .content-block::before {
   background-color: #007aff;
+}
+
+.tabs__btn {
+  border-radius: 16px 16px 0 0;
+  background-color: #888888;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.tabs__btn.is-active {
+  background-color: #bbbbbb;
+}
+
+.tab:not(.visually-hidden) {
+  padding: 24px;
+  background-color: #bbbbbb;
 }
 
 /* @mixin hover-focus {
