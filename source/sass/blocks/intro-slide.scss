@@ -1,4 +1,8 @@
 .intro-slide {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+
   background-color: coral;
   img {
     position: absolute;
@@ -10,3 +14,44 @@
   }
 }
 
+.intro-slide__text-container,
+.intro-slide__img-wrapper {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.intro-slide__text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.intro-slide__img-wrapper {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: calc(5 / 9 * 100%);
+  }
+}
+
+.intro-slide__title {
+  text-transform: uppercase;
+}
+
+.intro-slide__title,
+.intro-slide__text {
+  font-weight: 600;
+  padding: 20px;
+  border-radius: 20px;
+  overflow: auto;
+
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 16px -8px $color-default-black;
+}
