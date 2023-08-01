@@ -1,0 +1,28 @@
+mixin article()
+  section.article
+    .container
+      h2.h2.article__title Статья
+      .article__content
+        .article__img
+          +img('content/article', 'article', 'jpg','312','400', 'Кратко про статью')
+        .accordion
+          .accordion__item.is-active
+            button.btn.accordion__button
+              span Подзаголовок кликните для раскрытия блока с подробностями
+              .accordion__button-mark
+            .accordion__content
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at atque, consequuntur cum deleniti dignissimos, dolorum, ea eaque ipsam iste laudantium libero modi odio porro provident quasi soluta veniam voluptate.
+
+          .accordion__item
+            button.btn.accordion__button
+              span Подзаголовок кликните для раскрытия блока с подробностями
+              .accordion__button-mark
+            .accordion__content
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at atque, consequuntur cum deleniti dignissimos, dolorum, ea eaque ipsam iste laudantium libero modi odio porro provident quasi soluta veniam voluptate.
+
+          .accordion__item
+            button.btn.accordion__button
+              span Подзаголовок кликните для раскрытия блока с подробностями
+              .accordion__button-mark
+            .accordion__content
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at atque, consequuntur cum deleniti dignissimos, dolorum, ea eaque ipsam iste laudantium libero modi odio porro provident quasi soluta veniam voluptate.
