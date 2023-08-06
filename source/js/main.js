@@ -4,6 +4,7 @@ import {initIntroSlider} from './modules/sliders/intro-slider.js';
 import {initScrollTo} from './modules/init-move-to.js';
 import {initMainScrollSlider} from './modules/scroll-slider.js';
 import {initTabs} from './modules/tabs.js';
+import {initAccordion} from './modules/accordion/init-accordion.js';
 
 // ---------------------------------
 
@@ -16,5 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initIntroSlider();
     initMainScrollSlider();
     initTabs();
+
+    initAccordion();
   });
 });

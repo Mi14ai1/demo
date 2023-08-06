@@ -1,0 +1,22 @@
+mixin accordion(data, params={})
+  -
+    const customMark = params.mark ? params.mark : ""
+
+  .accordion&attributes(attributes)
+    each item in data
+      -
+        const activeClass = item.isActive ? "is-active" : ""
+        const itemMods = `${params.itemMods ? params.itemMods + " " : ""}${item.itemMod ? item.itemMod : ""}${activeClass ? " " + activeClass : ""}`
+        const buttonMod = params.buttonMods ? "params.buttonMods" : ""
+
+      .accordion__item(class= itemMods)
+        button.btn.accordion__button(class= buttonMod)
+          span!= item.itemTitle
+          if customMark
+            .accordion__custom-mark
+              +icon(customMark.close, customMark.width, customMark.height).accordion__custom-mark-open
+              +icon(customMark.open, customMark.width, customMark.height).accordion__custom-mark-close
+          else
+            span.accordion__button-mark
+        .accordion__content
+          p!= item.itemText ? item.itemText : ""

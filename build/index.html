@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>Демо проект ProjectName</title>
+    <title>Демо проект Портфолио</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -37,7 +37,7 @@
 </g></symbol></svg>
     </div>
     <div class="wrapper">
-      <div class="background"><img src="img/content/intro.jpg" srcset="img/content/intro@2x.jpg 2x" width="1200" height="675">
+      <div class="background"><img src="img/content/intro.jpg" srcset="img/content/intro@2x.jpg 2x" width="1200" height="675" alt="background">
       </div>
       <header class="header">
         <div class="container">
@@ -58,6 +58,15 @@
                 </li>
                 <li class="main-nav__item"><a class="main-nav__link" href="page-2.html">Демонстрация модальное окно</a>
                 </li>
+                <li class="main-nav__item sub-menu">
+                  <button class="sub-menu__btn btn js-sub-nav-list-btn" type="button">Проекты</button>
+                  <ul class="sub-menu__list">
+                    <li class="sub-list__item"><a class="main-nav__link is-active" href="cat/index.html">Cat-Energy</a></li>
+                    <li class="sub-list__item"><a class="main-nav__link is-active" href="fitnes/index.html">Fitnes</a></li>
+                    <li class="sub-list__item"><a class="main-nav__link is-active" href="smart/index.html">Smart</a></li>
+                    <li class="sub-list__item"><a class="main-nav__link is-active" href="arktika/index.html">Арктика</a></li>
+                  </ul>
+                </li>
                 <li class="main-nav__item"><span class="main-nav__link" data-move-to="footer">футер</span></li>
               </ul>
             </div>
@@ -65,7 +74,7 @@
         </div>
       </header>
       <main>
-        <section class="intro">
+        <section class="intro fade-bg">
           <div class="container">
             <div class="intro__content">
               <h1>Типовые задачи</h1>
@@ -88,7 +97,7 @@
                   </li>
                 </ul>
                 <div class="slider-continer">
-                  <div class="intro-slider swiper">
+                  <div class="intro-slider swiper intro__slider">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
                         <div class="intro-slide">
@@ -122,21 +131,42 @@
                       </div>
                       <div class="swiper-slide">
                         <div class="intro-slide">
-                          <div class="intro-slide__text-container">
-                            <p class="intro-slide__title">табы</p>
-                            <p class="intro-slide__text">область навигации с&nbsp;кнопками, которые переключают видимость контента в&nbsp;отображаемом фрейме</p>
-                          </div>
-                          <div class="intro-slide__img-wrapper"><img src="img/content/slides/intro/tabs.jpg" srcset="img/content/slides/intro/tabs@2x.jpg 2x" width="480" height="320">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="intro-slide">
-                          <div class="intro-slide__text-container">
-                            <p class="intro-slide__title">Аккордеоны</p>
-                            <p class="intro-slide__text">интерактивный элемент веб-страницы, представляющий собой вертикальный список заголовков или&nbsp;вкладок, при клике на&nbsp;которые происходит раскрытие соответствующего содержимого</p>
-                          </div>
-                          <div class="intro-slide__img-wrapper"><img src="img/content/slides/intro/accordion.jpg" srcset="img/content/slides/intro/accordion@2x.jpg 2x" width="480" height="320">
+                          <div class="accordion">
+                            <div class="accordion__item myclass1 myclss2 unicCls">
+                              <button class="btn accordion__button"><span>SubTitle-1</span><span class="accordion__button-mark"></span>
+                              </button>
+                              <div class="accordion__content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dicta dolor dolore dolores id illum molestiae nam numquam odit officiis omnis porro quae quas ratione repellendus sequi, soluta unde vitae!</p>
+                              </div>
+                            </div>
+                            <div class="accordion__item myclass1 myclss2  is-active">
+                              <button class="btn accordion__button"><span>SubTitle-2</span><span class="accordion__button-mark"></span>
+                              </button>
+                              <div class="accordion__content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dicta dolor dolore dolores id illum molestiae nam numquam odit officiis omnis porro quae quas ratione repellendus sequi, soluta unde vitae!</p>
+                              </div>
+                            </div>
+                            <div class="accordion__item myclass1 myclss2 ">
+                              <button class="btn accordion__button"><span>SubTitle-3</span><span class="accordion__button-mark"></span>
+                              </button>
+                              <div class="accordion__content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dicta dolor dolore dolores id illum molestiae nam numquam odit officiis omnis porro quae quas ratione repellendus sequi, soluta unde vitae!</p>
+                              </div>
+                            </div>
+                            <div class="accordion__item myclass1 myclss2 ">
+                              <button class="btn accordion__button"><span>SubTitle-4</span><span class="accordion__button-mark"></span>
+                              </button>
+                              <div class="accordion__content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dicta dolor dolore dolores id illum molestiae nam numquam odit officiis omnis porro quae quas ratione repellendus sequi, soluta unde vitae!</p>
+                              </div>
+                            </div>
+                            <div class="accordion__item myclass1 myclss2 ">
+                              <button class="btn accordion__button"><span>SubTitle-5</span><span class="accordion__button-mark"></span>
+                              </button>
+                              <div class="accordion__content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dicta dolor dolore dolores id illum molestiae nam numquam odit officiis omnis porro quae quas ratione repellendus sequi, soluta unde vitae!</p>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -146,7 +176,7 @@
                             <p class="intro-slide__title">слайдеры</p>
                             <p class="intro-slide__text">интерактивный элемент веб-страницы, который позволяет показывать серию изображений, контента или&nbsp;слайдов в&nbsp;определенной последовательности</p>
                           </div>
-                          <div class="intro-slide__img-wrapper"><img src="img/content/slides/intro/slider.jpg" srcset="img/content/slides/intro/slider@2x.jpg 2x" width="480" height="320">
+                          <div class="intro-slide__img-wrapper"><img src="img/content/slides/intro/slider.jpg" srcset="img/content/slides/intro/slider@2x.jpg 2x" width="480" height="320" alt="слайдеры">
                           </div>
                         </div>
                       </div>
@@ -156,7 +186,7 @@
                             <p class="intro-slide__title">модальные окна</p>
                             <p class="intro-slide__text">всплывающий элемент интерфейса веб-страницы, который захватывает фокус пользователя и&nbsp;блокирует взаимодействие с&nbsp;остальной частью страницы до&nbsp;закрытия окна</p>
                           </div>
-                          <div class="intro-slide__img-wrapper"><img src="img/content/slides/intro/modal.jpg" srcset="img/content/slides/intro/modal@2x.jpg 2x" width="480" height="320">
+                          <div class="intro-slide__img-wrapper"><img src="img/content/slides/intro/modal.jpg" srcset="img/content/slides/intro/modal@2x.jpg 2x" width="480" height="320" alt="модальные окна">
                           </div>
                         </div>
                       </div>
@@ -166,20 +196,20 @@
                             <p class="intro-slide__title">анимации</p>
                             <p class="intro-slide__text">процесс создания и&nbsp;воспроизведения движущихся или&nbsp;изменяющихся элементов интерфейса</p>
                           </div>
-                          <div class="intro-slide__img-wrapper"><img src="img/content/slides/intro/animation.jpg" srcset="img/content/slides/intro/animation@2x.jpg 2x" width="480" height="320">
+                          <div class="intro-slide__img-wrapper"><img src="img/content/slides/intro/animation.jpg" srcset="img/content/slides/intro/animation@2x.jpg 2x" width="480" height="320" alt="анимации">
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <button class="btn intro__slider-button js-slider-prev">prev</button>
-                  <button class="btn intro__slider-button js-slider-next">next</button>
+                  <button class="btn btn--regular intro__slider-button js-slider-prev">Назад</button>
+                  <button class="btn btn--regular intro__slider-button js-slider-next">Вперед</button>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section class="article">
+        <section class="article fade-bg">
           <div class="container">
             <h2 class="h2 article__title">Статья</h2>
             <div class="article__content">
@@ -187,25 +217,19 @@
               </div>
               <div class="accordion">
                 <div class="accordion__item is-active">
-                  <button class="btn accordion__button"><span>Подзаголовок кликните для раскрытия блока с подробностями</span>
-                    <div class="accordion__button-mark"></div>
-                  </button>
+                  <button class="btn accordion__button"><span>Подзаголовок кликните для раскрытия блока с подробностями</span><span class="accordion__button-mark"></span></button>
                   <div class="accordion__content">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at atque, consequuntur cum deleniti dignissimos, dolorum, ea eaque ipsam iste laudantium libero modi odio porro provident quasi soluta veniam voluptate.</p>
                   </div>
                 </div>
                 <div class="accordion__item">
-                  <button class="btn accordion__button"><span>Подзаголовок кликните для раскрытия блока с подробностями</span>
-                    <div class="accordion__button-mark"></div>
-                  </button>
+                  <button class="btn accordion__button"><span>Подзаголовок кликните для раскрытия блока с подробностями</span><span class="accordion__button-mark"></span></button>
                   <div class="accordion__content">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at atque, consequuntur cum deleniti dignissimos, dolorum, ea eaque ipsam iste laudantium libero modi odio porro provident quasi soluta veniam voluptate.</p>
                   </div>
                 </div>
                 <div class="accordion__item">
-                  <button class="btn accordion__button"><span>Подзаголовок кликните для раскрытия блока с подробностями</span>
-                    <div class="accordion__button-mark"></div>
-                  </button>
+                  <button class="btn accordion__button"><span>Подзаголовок кликните для раскрытия блока с подробностями</span><span class="accordion__button-mark"></span></button>
                   <div class="accordion__content">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at atque, consequuntur cum deleniti dignissimos, dolorum, ea eaque ipsam iste laudantium libero modi odio porro provident quasi soluta veniam voluptate.</p>
                   </div>

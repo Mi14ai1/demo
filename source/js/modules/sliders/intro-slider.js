@@ -10,6 +10,7 @@ const initIntroSlider = () => {
   const introSlider = new Swiper('.intro-slider', {
     loop: false,
     spaceBetween: 10,
+    autoHeight: false,
     navigation: {
       nextEl: '.js-slider-next',
       prevEl: '.js-slider-prev',

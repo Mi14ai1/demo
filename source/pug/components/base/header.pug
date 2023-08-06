@@ -8,7 +8,30 @@ mixin header(headerMods, currentUrl)
       {
         href: "page-2.html",
         text: "Демонстрация модальное окно"
-      }
+      },
+      {
+        title: 'Проекты',
+        list: [
+          {
+            href: "cat/index.html",
+            text: "Cat-Energy"
+          },
+          {
+            href: "fitnes/index.html",
+            text: "Fitnes"
+          },
+          {
+            href: "smart/index.html",
+            text: "Smart"
+          },
+          {
+            href: "arktika/index.html",
+            text: "Арктика"
+          },
+
+        ],
+      },
+
     ]
 
   header.header(class=headerMods)
@@ -21,10 +44,18 @@ mixin header(headerMods, currentUrl)
           ul.main-nav__list
             each link in headerLinks
               - const activeState = currentUrl === link.href
-              li.main-nav__item
-                if(activeState)
-                  span.main-nav__link.is-active=link.text
-                else
-                  a.main-nav__link(href=link.href)=link.text
+              if link.list
+                li.main-nav__item.sub-menu
+                  button(type="button").sub-menu__btn.btn.js-sub-nav-list-btn!= link.title ? link.title : ''
+                  ul.sub-menu__list
+                    each subLink in link.list
+                      li.sub-list__item
+                        a(href=subLink.href).main-nav__link.is-active= subLink.text
+              else
+                li.main-nav__item
+                  if activeState
+                    span.main-nav__link.is-active=link.text
+                  else
+                    a.main-nav__link(href=link.href)=link.text
             li.main-nav__item
               span.main-nav__link(data-move-to='footer') футер

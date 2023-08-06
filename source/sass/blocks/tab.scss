@@ -1,4 +1,9 @@
 .tab:not(.visually-hidden) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
   padding: 24px;
   background-color: $color-gray-active;
 }
