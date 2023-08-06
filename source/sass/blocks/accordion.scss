@@ -1,5 +1,56 @@
 .accordion {
-  background-color: darkgreen;
+  --border: 2px;
+}
+
+.accordion__item {
+  height: var(--btnHeight);
+  overflow: hidden;
+
+  &:first-child {
+    .accordion__button {
+      border-radius: 16px 16px 0 0;
+    }
+  }
+
+  animation-duration: 600ms;
+  animation-name: closeAccordion;
+}
+
+.accordion__item.is-active {
+  overflow: initial;
+  height: auto;
+
+  animation-duration: 600ms;
+  animation-name: openAccordion;
+
+}
+
+@keyframes closeAccordion {
+  from {
+    overflow: hidden;
+    height: calc(var(--contentHeight) + var(--btnHeight));
+  }
+
+  to {
+    overflow: hidden;
+    height: var(--btnHeight);
+  }
+}
+
+@keyframes openAccordion {
+  from {
+    overflow: hidden;
+    height: var(--btnHeight);
+  }
+
+  to {
+    height: calc(var(--contentHeight) + var(--btnHeight));
+    overflow: hidden;
+  }
+}
+
+.accordion__item + .accordion__item {
+  margin-top: calc(-1 * var(--border));
 }
 
 .accordion__button {
@@ -7,17 +58,21 @@
   align-items: center;
   justify-content: space-between;
 
-  background: darkgray;
-  border: 2px solid $color-gray;
+  font-weight: 600;
+
+  background: $color-gray-light;
+  border: var(--border) solid $color-gray;
   width: 100%;
 
   &-mark {
+    display: block;
     position: relative;
     width: 40px;
     height: 40px;
     border: 2px solid $color-default-black;
     border-radius: 50%;
     padding: 16px;
+    margin-left: 24px;
 
     &::after,
     &::before {
@@ -34,5 +89,18 @@
     &::after {
       transform: rotate(90deg);
     }
+  }
+}
+
+.accordion__content {
+  line-height: 0;
+
+  p {
+    display: inline-block;
+
+    font-family: $font-family--primary;
+    font-size: 24px;
+    line-height: 24px;
+    padding: 24px;
   }
 }

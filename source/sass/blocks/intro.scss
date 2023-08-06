@@ -1,25 +1,17 @@
 .intro {
   position: relative;
   color: $color-default-black;
-  padding: 100px 0;
+
+  margin-bottom: 40px;
+
+  .swiper-slide {
+    height: auto;
+  }
 }
 
 .intro__content {
   position: relative;
   padding: 60px;
-
-  &::before {
-    content: '';
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: $color-default-white;
-    filter: blur(40px);
-    z-index: -1;
-  }
 
   h1 {
     margin-bottom: 60px;
@@ -28,11 +20,19 @@
 
 .intro__subtitles {
   font-weight: 600;
-  padding-left: 40px;
+  padding: 40px;
+  height: fit-content;
+
+  border-radius: 16px;
+  background-color: $color-default-white;
 
   li:not(:last-child) p {
     margin-bottom: 16px;
   }
+}
+
+.intro__slider {
+  margin-bottom: 30px;
 }
 
 .intro__slider-wrapper {
@@ -47,10 +47,16 @@
 
 .slider-continer {
   min-width: 0;
+  user-select: none;
 }
 
 .intro--modal {
   .btn {
     margin-top: 20px;
+  }
+
+  .intro__content {
+    background-color: $color-default-white;
+    border-radius: 20px;
   }
 }

@@ -6,8 +6,6 @@ const initTabs = () => {
     return;
   }
 
-  console.log(tabsControls);
-
   tabsControls.addEventListener('click', (e) => {
 
     const button = e.target.closest('.btn');
@@ -27,8 +25,6 @@ const initTabs = () => {
       button.classList.add('is-active');
 
       const currentTab = tabs.querySelector(`.tab[data-tab-name=${button.dataset.tabName}]`);
-
-      console.log(currentTab);
 
       currentTab.classList.remove('visually-hidden');
     }

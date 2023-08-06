@@ -1,16 +1,6 @@
 -
   const slides = [
     {
-      title: "табы",
-      text: "область навигации с&nbsp;кнопками, которые переключают видимость контента в&nbsp;отображаемом фрейме",
-      img: "tabs"
-    },
-    {
-      title: "Аккордеоны",
-      text: "интерактивный элемент веб-страницы, представляющий собой вертикальный список заголовков или&nbsp;вкладок, при клике на&nbsp;которые происходит раскрытие соответствующего содержимого",
-      img: "accordion"
-    },
-    {
       title: "слайдеры",
       text: "интерактивный элемент веб-страницы, который позволяет показывать серию изображений, контента или&nbsp;слайдов в&nbsp;определенной последовательности",
       img: "slider"
@@ -53,7 +43,7 @@
   ]
 
 mixin intro-slider()
-  .intro-slider.swiper
+  .intro-slider.swiper&attributes(attributes)
     .swiper-wrapper
       .swiper-slide
         +intro-slide()
@@ -65,6 +55,38 @@ mixin intro-slider()
               each tab, index in tabsData
                 .tab(data-tab-name=`tab-${index}` class= index === 0 ? '' : 'visually-hidden')
                   p!= `${tab.title} ${tab.text}`
+
+      .swiper-slide
+        +intro-slide()
+          +accordion(
+            [
+            {
+              itemText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dicta dolor dolore dolores id illum molestiae nam numquam odit officiis omnis porro quae quas ratione repellendus sequi, soluta unde vitae!",
+              itemTitle: "SubTitle-1",
+              itemMod: "unicCls",
+            },
+            {
+              itemText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dicta dolor dolore dolores id illum molestiae nam numquam odit officiis omnis porro quae quas ratione repellendus sequi, soluta unde vitae!",
+              itemTitle: "SubTitle-2",
+              isActive: true,
+            },
+            {
+              itemText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dicta dolor dolore dolores id illum molestiae nam numquam odit officiis omnis porro quae quas ratione repellendus sequi, soluta unde vitae!",
+              itemTitle: "SubTitle-3",
+            },
+            {
+              itemText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dicta dolor dolore dolores id illum molestiae nam numquam odit officiis omnis porro quae quas ratione repellendus sequi, soluta unde vitae!",
+              itemTitle: "SubTitle-4",
+            },
+            {
+              itemText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dicta dolor dolore dolores id illum molestiae nam numquam odit officiis omnis porro quae quas ratione repellendus sequi, soluta unde vitae!",
+              itemTitle: "SubTitle-5",
+            },
+          ],
+            {
+            itemMods: "myclass1 myclss2"
+            }
+        )
       each slide in slides
         .swiper-slide
           +intro-slide(slide)

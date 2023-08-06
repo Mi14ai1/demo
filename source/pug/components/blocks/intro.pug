@@ -1,12 +1,11 @@
 mixin intro()
-  section.intro
+  section.intro.fade-bg
     .container
       .intro__content
         h1 Типовые задачи
         .intro__slider-wrapper
           +subtitle-list(["Слайдеры", "Аккордеоны", "Табы", "Анимации", "Модальные окна"]).intro__subtitles
           .slider-continer
-            +intro-slider()
-            button.btn.intro__slider-button.js-slider-prev prev
-            button.btn.intro__slider-button.js-slider-next next
-
+            +intro-slider().intro__slider
+            button.btn.btn--regular.intro__slider-button.js-slider-prev Назад
+            button.btn.btn--regular.intro__slider-button.js-slider-next Вперед

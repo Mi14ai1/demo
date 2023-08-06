@@ -37,7 +37,7 @@
 </g></symbol></svg>
     </div>
     <div class="wrapper">
-      <div class="background"><img src="img/content/intro.jpg" srcset="img/content/intro@2x.jpg 2x" width="1200" height="675">
+      <div class="background"><img src="img/content/intro.jpg" srcset="img/content/intro@2x.jpg 2x" width="1200" height="675" alt="background">
       </div>
       <header class="header">
         <div class="container"><a class="header__logo" href="index.html" aria-label="Переход на главную">
@@ -58,6 +58,15 @@
                 </li>
                 <li class="main-nav__item"><span class="main-nav__link is-active">Демонстрация модальное окно</span>
                 </li>
+                <li class="main-nav__item sub-menu">
+                  <button class="sub-menu__btn btn js-sub-nav-list-btn" type="button">Проекты</button>
+                  <ul class="sub-menu__list">
+                    <li class="sub-list__item"><a class="main-nav__link is-active" href="cat/index.html">Cat-Energy</a></li>
+                    <li class="sub-list__item"><a class="main-nav__link is-active" href="fitnes/index.html">Fitnes</a></li>
+                    <li class="sub-list__item"><a class="main-nav__link is-active" href="smart/index.html">Smart</a></li>
+                    <li class="sub-list__item"><a class="main-nav__link is-active" href="arktika/index.html">Арктика</a></li>
+                  </ul>
+                </li>
                 <li class="main-nav__item"><span class="main-nav__link" data-move-to="footer">футер</span></li>
               </ul>
             </div>
@@ -77,7 +86,7 @@
                 </div>
               </div>
               <p>Описание модального окна Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolor inventore nulla numquam odio porro possimus suscipit tempora? Ad amet consequatur deserunt ducimus maxime molestiae molestias, omnis quasi ullam voluptatibus.</p>
-              <button class="btn" type="button" data-open-modal="feedback">открыть модальное окно</button>
+              <button class="btn btn--regular" type="button" data-open-modal="feedback">открыть модальное окно</button>
             </div>
           </div>
         </section>

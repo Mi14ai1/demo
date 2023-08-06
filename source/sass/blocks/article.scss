@@ -1,9 +1,9 @@
 .article {
-  background-color: coral;
+  padding: 60px 0;
+  position: relative;
 }
 
 .article__content {
-  background-color: gold;
   display: flex;
 }
 
@@ -13,4 +13,5 @@
 
 .article__img {
   margin-right: 24px;
+  flex: 1 0 auto;
 }
