@@ -1,5 +1,7 @@
 .sub-menu {
+  position: relative;
   color: $color-default-white;
+  min-width: 115px;
 }
 
 .sub-menu__btn {
@@ -8,7 +10,24 @@
 }
 
 .sub-menu__list {
+  position: absolute;
+  width: max-content;
   list-style-type: none;
-  padding: 0;
+  border-radius: 16px;
+  padding: 16px;
   margin: 0;
+
+  a {
+    color: $color-default-black;
+
+    @include vp-1023 {
+      color: $color-default-white;
+    }
+  }
+
+  background: $color-default-white;
+
+  @include vp-1023 {
+    background: initial;
+  }
 }

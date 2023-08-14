@@ -5,6 +5,7 @@ import {initScrollTo} from './modules/init-move-to.js';
 import {initMainScrollSlider} from './modules/scroll-slider.js';
 import {initTabs} from './modules/tabs.js';
 import {initAccordion} from './modules/accordion/init-accordion.js';
+import {initMenu} from './modules/menu.js';
 
 // ---------------------------------
 
@@ -18,5 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initMainScrollSlider();
     initTabs();
     initAccordion();
+
+    initMenu();
   });
 });

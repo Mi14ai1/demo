@@ -38,7 +38,7 @@ mixin header(headerMods, currentUrl)
     .container
       +logo("logo-demo")
       nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
+        button.menu__btn.js-burger(type="button", aria-label="Переключатель отображения меню")
           +icon("burger", 20, 20)
         .main-nav__wrapper
           ul.main-nav__list
@@ -50,7 +50,7 @@ mixin header(headerMods, currentUrl)
                   ul.sub-menu__list
                     each subLink in link.list
                       li.sub-list__item
-                        a(href=subLink.href).main-nav__link.is-active= subLink.text
+                        a(href=subLink.href).main-nav__link= subLink.text
               else
                 li.main-nav__item
                   if activeState

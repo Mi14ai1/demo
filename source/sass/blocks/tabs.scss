@@ -1,5 +1,10 @@
 .tabs {
   height: 100%;
+
+  @include vp-1023 {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+  }
 }
 
 .tabs__content {
@@ -10,6 +15,12 @@
   border-radius: 16px 16px 0 0;
   background-color: $color-gray;
   transition: $trans-default;
+
+  @include vp-1023 {
+    border-radius: 0 16px 16px 0;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+  }
 }
 
 .tabs__btn.is-active {
