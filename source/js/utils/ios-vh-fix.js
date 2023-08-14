@@ -1,19 +1,3 @@
-import {iosChecker} from './ios-checker';
-
-const iosVhFix = () => {
-  if (!(!!window.MSInputMethodContext && !!document.documentMode)) {
-    if (iosChecker()) {
-      let vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-      window.addEventListener('resize', function () {
-        vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-      });
-    }
-  }
-};
-
 const vhFix = () => {
   if (!(!!window.MSInputMethodContext && !!document.documentMode)) {
     let vh = window.innerHeight * 0.01;
@@ -26,4 +10,4 @@ const vhFix = () => {
   }
 };
 
-export {iosVhFix, vhFix};
+export {vhFix};

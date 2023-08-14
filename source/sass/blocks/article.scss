@@ -5,6 +5,10 @@
 
 .article__content {
   display: flex;
+
+  @include vp-1023 {
+    flex-direction: column;
+  }
 }
 
 .article__title {
@@ -14,4 +18,14 @@
 .article__img {
   margin-right: 24px;
   flex: 1 0 auto;
+
+  img {
+    @include vp-1023 {
+      margin: 0 auto;
+    }
+  }
+
+  @include vp-1023 {
+    margin-bottom: 40px;
+  }
 }
