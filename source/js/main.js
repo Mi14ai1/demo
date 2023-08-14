@@ -17,7 +17,6 @@ window.addEventListener('DOMContentLoaded', () => {
     initIntroSlider();
     initMainScrollSlider();
     initTabs();
-
     initAccordion();
   });
 });
